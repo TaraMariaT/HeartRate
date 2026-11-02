@@ -6,7 +6,7 @@ export default function App() {
   const [age, setAge] = useState<string>('')
   const ageAsNumber = Number(age)
   const isValidAge = age.trim() !== '' && !isNaN(ageAsNumber)
-  
+
   const lowerLimit: number = isValidAge ? (220 - ageAsNumber) * 0.65 : 0
   const upperLimit: number = isValidAge ? (220 - ageAsNumber) * 0.85 : 0
 
@@ -36,7 +36,7 @@ export default function App() {
           <View style={styles.resultBox}>
             <Text style={styles.resultLabel}>LOWER LIMIT</Text>
             <Text style={styles.resultValue}>
-              {lowerLimit.toFixed(0)}
+              {lowerLimit.toFixed(2)}
             </Text>
             <Text style={styles.unit}>BPM</Text>
           </View>
@@ -44,7 +44,7 @@ export default function App() {
           <View style={[styles.resultBox, styles.upperResult]}>
             <Text style={styles.resultLabel}>UPPER LIMIT</Text>
             <Text style={styles.resultValue}>
-              {upperLimit.toFixed(0)}
+              {upperLimit.toFixed(2)}
             </Text>
             <Text style={styles.unit}>BPM</Text>
           </View>
